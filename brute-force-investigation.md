@@ -10,20 +10,20 @@ A security alert was generated after multiple failed login attempts were detecte
 
 ## 🔍 Investigation Steps
 
-Reviewed Windows Security Event Logs for failed authentication activity (Event ID 4625).
-Checked for successful login events following failures (Event ID 4624).
-Identified the targeted user account(s).
-Reviewed source IP addresses associated with the attempts.
-Correlated timestamps to determine attack frequency and automation patterns.
-Assessed whether the behavior aligned with brute force activity.
+1. Reviewed Windows Security Event Logs for failed authentication activity (Event ID 4625).
+2. Checked for successful login events following failures (Event ID 4624).
+3. Identified the targeted user account(s).
+4. Reviewed source IP addresses associated with the attempts.
+5. Correlated timestamps to determine attack frequency and automation patterns.
+6. Assessed whether the behavior aligned with brute force activity.
 
 ## 📊 Findings
 
-Over 50 failed login attempts were observed within a 5-minute window.
-Attempts primarily targeted a single user account.
-Source IP addresses were unfamiliar or external.
-Repeated attempts occurred in rapid succession.
-No successful login was identified after the failed attempts.
+* Over 50 failed login attempts were observed within a 5-minute window.
+* Attempts primarily targeted a single user account.
+* Source IP addresses were unfamiliar or external.
+* Repeated attempts occurred in rapid succession.
+* No successful login was identified after the failed attempts.
 
 ## 🧠 Analysis
 
@@ -35,8 +35,8 @@ This activity was determined to be a true positive brute force attack attempt. W
 
 ## 🛡️ Mitigation & Recommendations
 
-Enforce account lockout thresholds.
-Enable Multi-Factor Authentication (MFA).
-Block suspicious IP addresses where appropriate.
-Continue monitoring authentication logs for recurring activity.
-Promote strong password hygiene for end users.
+* Enforce account lockout thresholds.
+* Enable Multi-Factor Authentication (MFA).
+* Block suspicious IP addresses where appropriate.
+* Continue monitoring authentication logs for recurring activity.
+* Promote strong password hygiene for end users.
