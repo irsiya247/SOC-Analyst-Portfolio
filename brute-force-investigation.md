@@ -1,11 +1,11 @@
-Brute Force Attack Investigation – SOC Tier 1 Simulation
+# Brute Force Attack Investigation – SOC Tier 1 Simulation
 
 
-📄 Executive Summary
+## 📄 Executive Summary
 
 A potential brute force attack was identified through analysis of Windows Security Event Logs. The investigation revealed a high volume of failed login attempts targeting a specific user account within a short time frame. The behavior was consistent with automated password-guessing activity. No successful login was observed, and the event was classified as a true positive brute force attempt.
 
-🚨 Alert Trigger
+## 🚨 Alert Trigger
 
 A security alert was generated after multiple failed login attempts were detected on a Windows system within a short period. The activity indicated possible unauthorized authentication attempts.
 
