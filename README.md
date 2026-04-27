@@ -1,56 +1,54 @@
-# SOC Analyst Portfolio – Matthew Anton
+# Brute Force Attack Investigation – SOC Tier 1 Simulation
 
-This repository contains hands-on cybersecurity projects demonstrating skills in SIEM monitoring, incident response, and log analysis.
+## 📄 Executive Summary
+
+A potential brute force attack was identified through analysis of Windows Security Event Logs. The investigation revealed a high volume of failed login attempts targeting a specific user account within a short time frame. The behavior was consistent with automated password-guessing activity. No successful login was observed, and the event was classified as a true positive brute force attempt.
 
 ---
 
-# 🛡️ Incident Report #1 – Suspicious Login Attempt
+## 🚨 Alert Trigger
 
-## Alert Summary
+A security alert was generated after multiple failed login attempts were detected on a Windows system within a short period. The activity indicated possible unauthorized authentication attempts.
 
-* Alert Name: Suspicious Login Activity
-* Source: SIEM (Splunk)
-* Severity: Medium
-* Date: [Insert Date]
+---
 
-## Initial Findings
+## 🔍 Investigation Steps
 
-* Multiple failed login attempts detected from IP: 192.168.1.100
-* Target account: admin
-* Activity occurred within a short timeframe
+1. Reviewed Windows Security Event Logs for failed authentication activity (Event ID 4625).
+2. Checked for successful login events following failures (Event ID 4624).
+3. Identified the targeted user account(s).
+4. Reviewed source IP addresses associated with the attempts.
+5. Correlated timestamps to determine attack frequency and automation patterns.
+6. Assessed whether the behavior aligned with brute force activity.
 
-## Investigation Steps
+---
 
-* Reviewed authentication logs in SIEM
-* Correlated login attempts across timestamps
-* Identified pattern consistent with brute force attack
-* Checked IP reputation using OSINT tools
+## 📊 Findings
 
-## Indicators of Compromise (IOCs)
+* Over 50 failed login attempts were observed within a 5-minute window.
+* Attempts primarily targeted a single user account.
+* Source IP addresses were unfamiliar or external.
+* Repeated attempts occurred in rapid succession.
+* No successful login was identified after the failed attempts.
 
-* Suspicious IP: 192.168.1.100
-* Repeated failed logins
-* Abnormal login behavior
+---
 
-## Analysis
+## 🧠 Analysis
 
-The activity indicates a likely brute-force attack attempting unauthorized access. No successful login observed.
+The repeated failed login attempts, rapid frequency, and focus on one account strongly suggest a brute force attack using automated tooling. Although the attempts were unsuccessful, continued activity could lead to account compromise if left unmitigated.
 
-## Action Taken
+---
 
-* Recommended account lockout policy
-* Suggested blocking IP at firewall
-* Escalated for further monitoring
+## 🎯 Conclusion
 
-## Tools Used
+This activity was determined to be a true positive brute force attack attempt. While no account compromise occurred, the authentication pattern indicated malicious intent and unauthorized access efforts.
 
-* Splunk
-* OSINT tools
+---
 
-## MITRE ATT&CK Mapping
+## 🛡️ Mitigation & Recommendations
 
-* T1110 – Brute Force
-
-## Conclusion
-
-No confirmed breach, but attack behavior detected. Continued monitoring recommended.
+* Enforce account lockout thresholds.
+* Enable Multi-Factor Authentication (MFA).
+* Block suspicious IP addresses where appropriate.
+* Continue monitoring authentication logs for recurring activity.
+* Promote strong password hygiene for end users.
