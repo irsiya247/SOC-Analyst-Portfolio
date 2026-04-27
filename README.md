@@ -3,8 +3,7 @@
 Hands-on cybersecurity portfolio demonstrating simulated SOC investigations, incident analysis, and threat detection workflows.
 
 ## Investigations
-- [Brute Force Attack Investigation](brute-force-investigation.md)
-* Brute Force Attack Investigation – Windows Event Log authentication analysis
+- [Brute Force Attack Investigation – Windows Event Log authentication analysis](brute-force-investigation.md)
 - [Phishing Email Investigation](brute-force-investigation.md) – sender/header/link triage
 * Suspicious PowerShell Persistence Investigation – endpoint persistence detection
 
